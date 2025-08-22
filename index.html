@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <style>
+      body {
+        margin: 0 auto;
+        background: linear-gradient(45deg, #0f0f0f, #1a1a1a, #000000);
+        background-size: 400% 400%;
+        animation: bgmove 8s infinite alternate;
+        font-family: "Comic Sans MS", cursive;
+        color: #fff;
+      }
+
+      @keyframes bgmove {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+
+      .main {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        height: 60%;
+        width: 60%;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #0ff;
+        border-radius: 20px;
+        padding: 20px;
+        background: rgba(20, 20, 20, 0.9);
+        box-shadow: 0 0 30px #0ff, 0 0 60px #f0f;
+        animation: pulse 3s infinite alternate;
+      }
+
+      @keyframes pulse {
+        from { box-shadow: 0 0 20px #0ff; }
+        to { box-shadow: 0 0 40px #f0f; }
+      }
+
+      .container2 {
+        display: grid;
+        height: 100%;
+        place-content: center;
+        padding: 10px;
+        text-align: center;
+      }
+
+      input {
+        margin-top: 10px;
+        padding: 10px;
+        border: 2px solid #0ff;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 18px;
+        background: #111;
+        color: #0ff;
+      }
+
+      button {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        background: #111;
+        color: #fff;
+        border: 2px solid #f0f;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      button:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px #f0f, 0 0 25px #0ff;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .hello {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin: 20px;
+        font-size: 40px;
+        color: #0ff;
+        font-weight: bold;
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        from { text-shadow: 0 0 10px #0ff; }
+        to { text-shadow: 0 0 25px #f0f; }
+      }
+
+      .moving {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.05);
+        position: absolute;
+        top: 5%;
+        left: 0;
+        font-size: 25px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        color:#0ff;
+        text-shadow: 0 0 10px rgb(5, 41, 61), 0 0 20px rgb(6, 15, 26);
+        animation: moveX 6s linear infinite alternate;
+      }
+
+      @keyframes moveX {
+        from { left: -100%; }
+        to { left: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="container2">
+          <div class="moving">
+            🚀 CALCULATOR OF THE YEAR 🚀
+          </div>
+          <div>
+            <input type="text" placeholder="Enter your number" />
+            <br />
+            <input type="text" placeholder="Enter your number" />
+          </div>
+          <div class="buttons">
+            <button onclick="helloWorld()">+</button>
+            <button>-</button>
+            <button>/</button>
+            <button>*</button>
+          </div>
+          <div class="hello" id="hello"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let hello = document.getElementById("hello");
+
+      function helloWorld() {
+        hello.innerText = "🔥HELLO WORLD🔥";
+      }
+    </script>
+  </body>
+</html>
